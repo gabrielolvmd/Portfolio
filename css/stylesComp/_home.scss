@@ -1,0 +1,148 @@
+@use '../global/boilerplate' as *;
+
+.home-section {
+  @include displayFlex('', '', column);
+  gap: 2em;
+  text-align: center;
+  padding-top: 7em;
+  @media (min-width: 900px) {
+    padding-top: 9em;
+    text-align: left;
+    height: 100vh;
+  }
+}
+
+.home_container {
+  @include displayFlex(space-between, '', column);
+  gap: 5em;
+  @media screen and (min-width: 900px) {
+    gap: 10em;
+  }
+}
+
+.home_content {
+  @include displayFlex(space-between, center, column);
+  gap: 3em;
+  @media screen and (min-width: 900px) {
+    justify-content: space-between;
+    gap: 10em;
+    flex-direction: row-reverse;
+  }
+}
+
+.home_content-image {
+  background-image: url('https://i.pinimg.com/736x/70/d3/4c/70d34cafbd5ef735b9f5e25d313f140a.jpg');
+  transition: all 0.5s ease-in-out;
+  background-size: cover;
+  width: 19em;
+  height: 19em;
+  border-radius: 48% 52% 42% 58% / 54% 46% 54% 46%;
+  position: relative;
+  flex-shrink: 0;
+  @media screen and (min-width: 500px) {
+    width: 22em;
+    height: 22em;
+    transition: all 0.5s ease-in-out;
+  }
+}
+
+.shape {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0.4;
+  border-radius: 48% 52% 42% 58% / 54% 46% 54% 46%;
+  outline: 7px solid #d4a9db;
+  background: #be70cb;
+  z-index: -1;
+  animation: rotate 10s infinite linear;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.home_content-text {
+  @include displayFlex(space-between, '', column);
+  gap: 2em;
+}
+
+.home_content-article {
+  max-width: 30em;
+}
+
+.home_content-article h1 {
+  color: $black-light;
+  font-size: 2.3em;
+  font-weight: 800;
+  line-height: 1.2em;
+  margin-bottom: 0.4em;
+  @media (min-width: 500px) {
+    font-size: 3em;
+  }
+}
+
+.home_content-article span {
+  color: $purple;
+}
+
+.home_content-medias {
+  font-size: 2em;
+  @include displayFlex(center, '', row);
+  gap: 1em;
+  @media screen and (min-width: 900px) {
+    justify-content: flex-start;
+  }
+}
+
+.home_content-medias a {
+  &:hover i {
+    @include iconHover($purple);
+  }
+}
+
+.home-container_techStack {
+  @include displayFlex(center, center, column);
+  gap: 2em;
+  @media (min-width: 900px) {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+}
+
+.home-container_techStack h3 {
+  font-weight: 700;
+  border-bottom: 2px solid;
+  padding-bottom: 0.2em;
+  @media (min-width: 900px) {
+    border: none;
+    border-right: 1px solid $black-light;
+    padding-right: 1em;
+    margin-right: 1em;
+  }
+}
+
+.techStack_logos {
+  @include displayFlex(center, center, '');
+  flex-wrap: wrap;
+  gap: 2em;
+}
+
+.techStack_logos .icon-logos {
+  @include shadow();
+  @include displayFlex(center, center, '');
+  width: 4em;
+  height: 4em;
+  border-radius: 50%;
+  background: $white;
+}
+
+.icon-logos img {
+  width: 50%;
+  display: block;
+}

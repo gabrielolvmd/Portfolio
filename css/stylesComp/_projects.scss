@@ -1,0 +1,121 @@
+@use '../global/boilerplate' as *;
+
+.portfolio-section {
+  @include displayFlex(center, '', column);
+  gap: 2em;
+}
+
+.portfolio_container {
+  margin: 0;
+  @media screen and (min-width: 900px) {
+    margin: 0 auto;
+  }
+}
+
+.portfolio_titles {
+  margin-bottom: 3em;
+  * {
+    margin: 0.5em 0;
+  }
+}
+
+.portfolio_cards {
+  @include displayFlex(center, center, column);
+  gap: 5em;
+}
+
+.portfolio_card {
+  @include displayFlex(center, '', column);
+  @include shadow();
+  gap: 2em;
+  width: 100%;
+  background: $white;
+  padding: 1.5em;
+  border-radius: 1em;
+  height: 43em;
+  max-width: 700px;
+  @media screen and (min-width: 900px) {
+    flex-direction: row;
+    height: 25em;
+    max-width: initial;
+  }
+}
+
+.card-reverse {
+  @media screen and (min-width: 900px) {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+}
+
+.portfolio_card-image {
+  @include shadow();
+  border-radius: 1em;
+  flex: 1.4;
+  overflow: hidden;
+}
+
+.portfolio_card-image img {
+  display: block;
+  width: 100%;
+}
+
+.portfolio_card-image img.scroll {
+  transform: translateY(0%);
+  transition: transform 10s ease-in-out;
+  display: block;
+  width: 100%;
+  &:hover {
+    transform: translateY(-81%);
+  }
+}
+
+.portfolio_card-content {
+  @include displayFlex(space-evenly, '', column);
+  gap: 2em;
+  flex: 1;
+}
+
+.portfolio_card-content h2 {
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 1.2em;
+}
+
+.portfolio_card-techs {
+  @include displayFlex('', '', '');
+  gap: 2em;
+}
+
+.portfolio_card-techs span {
+  @include shadow();
+  font-weight: 700;
+  border-radius: 0.2em;
+  padding: 1em;
+}
+
+.portfolio_card-links {
+  @include displayFlex('', '', '');
+  gap: 2em;
+  font-size: 1.1em;
+  font-weight: 500;
+}
+
+.portfolio_card-links a {
+  &:hover * {
+    @include iconHover($purple);
+  }
+  &:last-child {
+    i {
+      font-size: 1em;
+    }
+  }
+}
+
+.portfolio_card-links a p {
+  display: inline-block;
+}
+
+.portfolio_card-links a i {
+  font-size: 1.3em;
+}

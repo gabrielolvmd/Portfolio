@@ -1,0 +1,36 @@
+@use '../global/boilerplate' as *;
+
+// .about-section {
+//   background: $white;
+// }
+
+.about_container {
+  @include displayFlex(center, center, column);
+  gap: 2em;
+  @media screen and (min-width: 900px) {
+    flex-direction: row;
+  }
+}
+
+.about_image img {
+  border-radius: 2em;
+  width: 100%;
+  display: block;
+  @media screen and (max-width: 900px) {
+    max-width: 500px;
+  }
+}
+
+.about_image {
+  flex: 1;
+}
+
+.about_content {
+  flex: 1;
+  * {
+    margin: 0.6em 0;
+  }
+  @media screen and (min-width: 900px) {
+    @include displayFlex(center, space-between, column);
+  }
+}

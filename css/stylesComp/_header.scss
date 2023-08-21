@@ -1,0 +1,149 @@
+@use '../global/boilerplate' as *;
+
+header {
+  @include shadow();
+  position: sticky;
+  padding: 1.5em 2em;
+  background: $white;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+.header_container {
+  @include displayFlex(space-between, center, row);
+  margin: 0 auto;
+  max-width: 80em;
+}
+
+.menu-link.active {
+  color: red;
+}
+
+.header_logo a {
+  font-size: 1.2em;
+  font-weight: 800;
+  color: inherit;
+}
+
+.header_nav ul {
+  @include displayFlex(center, center, row);
+  list-style: none;
+  gap: 5em;
+}
+
+.header_nav li a {
+  font-weight: 400;
+  color: $grey;
+  &:hover {
+    @include iconHover($purple);
+  }
+}
+
+.header_nav ul li:last-child {
+  @media screen and (min-width: 900px) {
+    display: none;
+  }
+}
+
+.header_nav ul li:not(:last-child) {
+  @media screen and (max-width: 899px) {
+    display: none;
+  }
+}
+
+.helloBtn {
+  position: relative;
+  background-color: $white;
+  border-radius: 0.5em;
+}
+
+.helloBtn .helloBtn_link {
+  font-size: 1em;
+  cursor: pointer;
+  display: block;
+  border: 1px solid $purple;
+  padding: 0.5em;
+  border-radius: 0.5em;
+  color: $purple;
+  &:hover {
+    background-color: $purple;
+    color: $white;
+    transition: background-color 0.3s ease;
+  }
+}
+
+.helloBtn_medias {
+  color: $purple;
+  position: absolute;
+  top: 90%;
+  left: 0;
+  right: 0;
+  background-color: $white;
+  z-index: -1;
+  height: 0; //change to auto with JavaScript
+  overflow: hidden;
+  transition: height 4s ease;
+}
+
+.helloBtn .helloBtn_medias a {
+  padding: 0.2em 0.5em;
+  display: block;
+  &:first-child {
+    padding-top: 0.7em;
+  }
+}
+
+.helloBtn .helloBtn_medias a i {
+  font-size: 0.5em;
+}
+
+.open_menuBtn {
+  font-size: 1.5em;
+  &:hover {
+    @include iconHover($purple);
+  }
+}
+
+.mobile_menu {
+  @include displayFlex(center, center, column);
+  position: fixed;
+  top: 0;
+  left: -100%;
+  height: 100vh;
+  width: 100%;
+  background: $white;
+  transition: left 0.5s ease-in-out;
+}
+
+.close_menuBtn {
+  position: absolute;
+  top: 0.7em;
+  right: 1em;
+  font-size: 2em;
+  &:hover {
+    @include iconHover($purple);
+  }
+}
+
+.mobile_menu ul {
+  text-align: center;
+  list-style: none;
+}
+
+.mobile_menu ul li {
+  margin: 2em 0;
+  font-weight: 500;
+  font-size: 1.5em;
+}
+
+.mobile_menu ul li a {
+  &:hover {
+    @include iconHover($purple);
+  }
+}
+
+.open {
+  left: 0;
+}

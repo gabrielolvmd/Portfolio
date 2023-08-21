@@ -1,0 +1,24 @@
+@mixin displayFlex($justify, $align, $direction) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+}
+
+@mixin shadow {
+  box-shadow: 0px 0px 10px #5a5a5a27;
+}
+
+@mixin padding-section {
+  padding: 9em 2em;
+}
+
+@mixin padding-section-mobile {
+  padding: 5em 2em;
+}
+
+@mixin iconHover($color) {
+  transition: color 0.2s ease;
+  cursor: pointer;
+  color: $color;
+}

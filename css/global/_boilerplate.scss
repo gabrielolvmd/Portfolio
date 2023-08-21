@@ -1,0 +1,63 @@
+@use './colors' as *;
+@use './mixins' as *;
+@use './typhography' as *;
+
+@forward 'colors';
+@forward 'mixins';
+@forward 'typhography';
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  font-family: $primary-font;
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+}
+
+body {
+  background: $off-white;
+}
+
+button {
+  background: none;
+  border: none;
+}
+
+.sections {
+  @include padding-section();
+  &:nth-child(odd) {
+    background: $white;
+  }
+  @media screen and (max-width: 900px) {
+    @include padding-section-mobile();
+  }
+}
+
+.section-title {
+  color: $purple;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.section-subtitle {
+  color: $black-light;
+  font-weight: 800;
+  font-size: 1.5em;
+  line-height: 1.5em;
+}
+
+.default-p {
+  color: $grey;
+  font-weight: 500;
+  font-size: 1.1em;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 62.5em;
+}

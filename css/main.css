@@ -589,6 +589,12 @@ header {
   font-size: 1.3em;
 }
 
+.important {
+  font-size: 0.8em;
+  color: red;
+  font-weight: bold;
+}
+
 .contact-container {
   display: flex;
   justify-content: "";

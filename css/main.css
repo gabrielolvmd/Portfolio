@@ -265,7 +265,8 @@ header {
 }
 
 .home_content-image {
-  background-image: url("https://i.pinimg.com/736x/70/d3/4c/70d34cafbd5ef735b9f5e25d313f140a.jpg");
+  background-image: url(/assets/images/aboutme/Photo.jpeg);
+  background-position: right;
   transition: all 0.5s ease-in-out;
   background-size: cover;
   width: 19em;

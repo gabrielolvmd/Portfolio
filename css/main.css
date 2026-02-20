@@ -163,6 +163,20 @@ header {
   font-size: 0.5em;
 }
 
+.downloadBtn_link {
+  cursor: pointer;
+  border: 1px solid #9f22b4;
+  padding: 0.5em 1em;
+  border-radius: 0.5em;
+  color: #9f22b4;
+  width: fit-content;
+}
+.downloadBtn_link:hover {
+  background-color: #9f22b4;
+  color: #ffffff;
+  transition: background-color 0.3s ease;
+}
+
 .open_menuBtn {
   font-size: 1.5em;
 }
@@ -420,7 +434,7 @@ header {
 }
 
 .about_image img {
-  border-radius: 2em;
+  
   width: 100%;
   display: block;
 }
@@ -432,6 +446,12 @@ header {
 
 .about_image {
   flex: 1;
+  max-height: 500px;
+  overflow: hidden;
+  border-radius: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .about_content {

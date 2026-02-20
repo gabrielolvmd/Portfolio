@@ -163,6 +163,20 @@ header {
   font-size: 0.5em;
 }
 
+.downloadBtn_link {
+  cursor: pointer;
+  border: 1px solid #9f22b4;
+  padding: 0.5em 1em;
+  border-radius: 0.5em;
+  color: #9f22b4;
+  width: fit-content;
+}
+.downloadBtn_link:hover {
+  background-color: #9f22b4;
+  color: #ffffff;
+  transition: background-color 0.3s ease;
+}
+
 .open_menuBtn {
   font-size: 1.5em;
 }
@@ -416,11 +430,12 @@ header {
 @media screen and (min-width: 900px) {
   .about_container {
     flex-direction: row;
+    flex-wrap: wrap;
   }
 }
 
 .about_image img {
-  border-radius: 2em;
+  
   width: 100%;
   display: block;
 }
@@ -432,6 +447,12 @@ header {
 
 .about_image {
   flex: 1;
+  max-height: 500px;
+  overflow: hidden;
+  border-radius: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .about_content {
@@ -447,6 +468,110 @@ header {
     align-items: space-between;
     flex-direction: column;
   }
+}
+
+.about_experience {
+  width: 100%;
+  margin-top: 4em;
+  flex-basis: 100%;
+  flex-shrink: 0;
+}
+.about_experience .section-title {
+  margin-bottom: 2em;
+}
+@media screen and (min-width: 900px) {
+  .about_experience {
+    margin-top: 6em;
+  }
+}
+
+.experience_item {
+  margin-bottom: 3em;
+  padding-bottom: 2em;
+  border-bottom: 1px solid rgba(149, 149, 149, 0.2);
+}
+.experience_item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.experience_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1em;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+@media screen and (max-width: 600px) {
+  .experience_header {
+    flex-direction: column;
+  }
+}
+
+.experience_company {
+  flex: 1;
+}
+
+.experience_company-name {
+  color: #333232;
+  font-weight: 700;
+  font-size: 1.3em;
+  margin: 0 0 0.3em 0;
+}
+
+.experience_role {
+  color: #757474;
+  font-weight: 500;
+  font-size: 1em;
+  margin: 0;
+}
+
+.experience_date {
+  color: #9f22b4;
+  font-weight: 600;
+  font-size: 0.95em;
+  white-space: nowrap;
+}
+@media screen and (max-width: 600px) {
+  .experience_date {
+    margin-top: 0.5em;
+  }
+}
+
+.experience_tech {
+  color: #757474;
+  font-weight: 500;
+  font-size: 0.95em;
+  margin: 1em 0;
+  font-style: italic;
+}
+
+.experience_achievements {
+  list-style: none;
+  padding: 0;
+  margin: 1em 0 0 0;
+}
+.experience_achievements li {
+  color: #757474;
+  font-weight: 400;
+  font-size: 1em;
+  line-height: 1.6;
+  margin-bottom: 0.8em;
+  padding-left: 1.5em;
+  position: relative;
+}
+.experience_achievements li::before {
+  content: "•";
+  color: #9f22b4;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+  font-size: 1.2em;
+}
+.experience_achievements li:last-child {
+  margin-bottom: 0;
 }
 
 .portfolio-section {

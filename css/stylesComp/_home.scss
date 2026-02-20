@@ -147,3 +147,23 @@
   width: 50%;
   display: block;
 }
+
+.downloadBtn_link {
+  cursor: pointer;
+  border: 1px solid $purple;
+  padding: 0.5em 1em;
+  border-radius: 0.5em;
+  color: $purple;
+  width: fit-content;
+  
+  @media screen and (max-width: 900px) {
+    margin: 0 auto;
+    display: block;
+  }
+  
+  &:hover {
+    background-color: $purple;
+    color: $white;
+    transition: background-color 0.3s ease;
+  }
+}

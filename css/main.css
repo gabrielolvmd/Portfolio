@@ -171,6 +171,12 @@ header {
   color: #9f22b4;
   width: fit-content;
 }
+@media screen and (max-width: 900px) {
+  .downloadBtn_link {
+    margin: 0 auto;
+    display: block;
+  }
+}
 .downloadBtn_link:hover {
   background-color: #9f22b4;
   color: #ffffff;

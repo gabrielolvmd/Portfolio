@@ -41,11 +41,6 @@ export function initScrollAnimations() {
   
   // Observa todos os elementos
   animatedElements.forEach((element, index) => {
-    // Define estado inicial (invisível e abaixo)
-    element.style.opacity = '0';
-    element.style.transform = 'translateY(30px)';
-    element.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
-    
     // Verifica se o elemento já está visível na viewport (para elementos no topo da página)
     const rect = element.getBoundingClientRect();
     const isAlreadyVisible = rect.top < window.innerHeight && rect.top >= 0;
@@ -53,12 +48,22 @@ export function initScrollAnimations() {
     if (isAlreadyVisible) {
       // Se já está visível, anima imediatamente com delay se houver
       const delay = parseInt(element.dataset.delay) || 0;
+      // Define estado inicial primeiro
+      element.style.opacity = '0';
+      element.style.transform = 'translateY(30px)';
+      element.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+      
       setTimeout(() => {
         element.style.opacity = '1';
         element.style.transform = 'translateY(0)';
         element.classList.add('animated');
       }, delay);
     } else {
+      // Define estado inicial (invisível e abaixo)
+      element.style.opacity = '0';
+      element.style.transform = 'translateY(30px)';
+      element.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+      
       // Inicia a observação para elementos que ainda não estão visíveis
       observer.observe(element);
     }

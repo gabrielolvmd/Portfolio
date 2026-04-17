@@ -285,7 +285,7 @@ header {
 }
 
 .home_content-image {
-  background-image: url(/assets/images/aboutme/Photo.jpeg);
+  background-image: url(/assets/images/aboutme/Photo.jpg);
   background-position: right;
   transition: all 0.5s ease-in-out;
   background-size: cover;
